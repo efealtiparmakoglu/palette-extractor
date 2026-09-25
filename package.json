@@ -1,0 +1,12 @@
+{
+  "name": "palette-extractor",
+  "version": "1.0.0",
+  "description": "k-means color palette extraction from images with WCAG contrast scores, copyable formats and CSS variable generation",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/",
+    "build": "node build.ts"
+  }
+}

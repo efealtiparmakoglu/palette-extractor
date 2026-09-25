@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>palette extractor — offline</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    font-family: ui-monospace, monospace;
+    background: #101418; color: #d7dde3;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 20px; margin: 0; gap: 14px;
+  }
+  h1 { font-size: 18px; margin: 0; }
+  .controls { display: flex; gap: 10px; align-items: center; }
+  select, button, input {
+    font: inherit; background: #1b2129; color: #d7dde3;
+    border: 1px solid #2c343c; padding: 5px 10px;
+  }
+  #swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+  .swatch {
+    width: 120px; height: 120px; border-radius: 8px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 8px; cursor: pointer; gap: 2px;
+  }
+  .swatch strong { font-size: 14px; }
+  .swatch small { font-size: 11px; opacity: 0.85; }
+  .swatch[data-copied]::after { content: attr(data-copied); font-size: 11px; }
+  #css-vars {
+    white-space: pre-wrap; background: #1b2129; border: 1px solid #2c343c;
+    padding: 10px; width: 90vw; max-width: 720px; font-size: 12px;
+  }
+</style>
+</head>
+<body>
+  <h1>palette extractor <small>(offline, k-means + WCAG contrast)</small></h1>
+  <div class="controls">
+    <input type="file" id="file" accept="image/*">
+    <label>clusters
+      <select id="clusters">
+        <option>4</option><option selected>6</option><option>8</option><option>10</option>
+      </select>
+    </label>
+    <button id="copy-css">copy CSS variables</button>
+  </div>
+  <div id="swatches"></div>
+  <pre id="css-vars"></pre>
+<script type="module">
+/*__APP__*/
+</script>
+</body>
+</html>
